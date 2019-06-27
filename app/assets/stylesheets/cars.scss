@@ -1,0 +1,92 @@
+.cars-index {
+  h2, h3 {
+    text-align: center;
+    margin: 2% 0 3%
+  }
+}
+
+h2.featured-cars-title {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.featured-cars {
+  width: 20%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: .4% 1%;
+}
+
+.featured-car {
+  width: 90%;
+  display: block;
+  margin: 0 auto 1%;
+  padding: 2% 3%;
+  border: 1px solid #919191;
+  background-color: #fffff5;
+}
+
+#car-finder {
+  width: 75%;
+  display: inline-block;
+  vertical-align: top;
+
+  form {
+    width: 75%;
+    margin: 0 auto
+  }
+
+  input {
+    margin: 1% auto 1%;
+  }
+
+  input[type="text"] {
+    height: 20px;
+    width: 15%;
+  }
+
+  input[type="submit"] {
+    width: 10%;
+    height: 25px;
+    border-radius: 3px;
+  }
+}
+
+.convo {
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+  min-height: 200px;
+  border: 1px solid #ccc;
+
+  ul {
+    padding: 0
+  }
+  
+
+  .message {
+    width: 60%;
+    min-height: 75px;
+
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 3px 15px;
+    margin: 10px auto;
+    border-radius: 5px;
+
+    h3, p {
+      text-align: left;
+    }
+  }
+  
+  .car-message {
+    background-color: mintcream;
+    margin-left: 15px
+  }
+  
+  .user-message {
+    background-color: azure;
+    margin-right: 15px;
+  }
+}

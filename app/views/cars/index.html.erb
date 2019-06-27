@@ -1,0 +1,29 @@
+<div class="cars-index">
+
+  <h2>Welcome to the Car Finder</h2>
+  <h3>You can search for different types of cars by <i>name,</i> <i>make,</i> <i>model,</i> <i>year</i> <i>price range</i> <i>color,</i></h3>
+
+  <h2 class="featured-cars-title">Featured Cars</h2>
+  <div class="featured-cars">
+    <% @featured_cars.each do |car| %>
+      <div class="featured-car">
+        <h5><%= car.name %></h5>
+        <p><%= car.year %> - <%= car.make %></p>
+        <p><%= car.style %></p>
+        <p><%= car.color %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="car-finder">  
+    <form action="/car-finder" target="_self" method="GET">
+      <input class="search-term" type="text" name="search-term" value="" placeholder="Search..." />
+      <input type="submit" value="Find Cars" />
+    </form>
+
+    <div class="convo">
+      <ul></ul>
+    </div>
+  </div>
+
+</div>
