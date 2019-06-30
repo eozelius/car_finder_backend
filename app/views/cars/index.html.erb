@@ -1,18 +1,27 @@
 <div class="cars-index">
 
-  <h2>Welcome to the Car Finder</h2>
-  <h3>You can search for different types of cars by <i>name,</i> <i>make,</i> <i>model,</i> <i>year</i> <i>price range</i> <i>color,</i></h3>
+  <!-- React Component => CarFinderHeader -->
+  <div class="react-car-finder-component-container"></div>
+  <script>
+    var titleContainer = document.querySelector('.react-car-finder-component-container')
+    ReactDOM.render(
+      React.createElement(CarFinderHeader), 
+      titleContainer
+    )
+  </script>
 
-  <h2 class="featured-cars-title">Featured Cars</h2>
   <div class="featured-cars">
-    <% @featured_cars.each do |car| %>
-      <div class="featured-car">
-        <h5><%= car.name %></h5>
-        <p><%= car.year %> - <%= car.make %></p>
-        <p><%= car.style %></p>
-        <p><%= car.color %></p>
-      </div>
-    <% end %>
+    
+    <!-- List of React Components => <FeaturedCar car={car} /> -->
+    <div class="react-featured-cars-list-component-container"></div>
+    <script>
+      var featuredCarsContainer = document.querySelector('.react-featured-cars-list-component-container')
+      var featuredCars = JSON.parse("<%= @featured_cars %>".replace(/(&quot\;)/g,"\""))
+      ReactDOM.render(
+        React.createElement(FeaturedCarsList, { cars: featuredCars}),
+        featuredCarsContainer
+      )
+    </script>
   </div>
 
   <div id="car-finder">  

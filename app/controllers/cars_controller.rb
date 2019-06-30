@@ -4,10 +4,7 @@ class CarsController < ApplicationController
   # GET /carss
   # GET /cars.json
   def index
-    # @featured_cars = Car.where("featured IS true")
-    @featured_cars = Car.featured_cars
-
-    Rails.logger.debug "\n\n featured_cars => #{@featured_cars}"
+    @featured_cars = Car.featured_cars.to_json
   end
 
   def carFinder
