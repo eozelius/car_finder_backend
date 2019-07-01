@@ -1,14 +1,14 @@
 class CarsController < ApplicationController  
   before_action :set_card, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery except: :car_finder_chatbot
 
-  # GET /carss
-  # GET /cars.json
   def index
     @featured_cars = Car.featured_cars.to_json
   end
 
-  def carFinder
-    search_query = JSON.parse(params["searchTerm"])    
+  def car_finder_chatbot
+    search_query = params["searchTerm"] || ''
+    return render json: [] if search_query == ''
     cars = Car.search_by_all(search_query)
     render json: cars
   end

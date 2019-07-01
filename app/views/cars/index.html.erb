@@ -12,7 +12,7 @@
 
   <div class="featured-cars">
     
-    <!-- List of React Components => <FeaturedCar car={car} /> -->
+    <!-- React Component => <FeaturedCarsList cars={cars} /> -->
     <div class="react-featured-cars-list-component-container"></div>
     <script>
       var featuredCarsContainer = document.querySelector('.react-featured-cars-list-component-container')
@@ -24,15 +24,16 @@
     </script>
   </div>
 
+  <!-- React Component => <Chatbot /> -->
   <div id="car-finder">  
-    <form action="/car-finder" target="_self" method="GET">
-      <input class="search-term" type="text" name="search-term" value="" placeholder="Search..." />
-      <input type="submit" value="Find Cars" />
-    </form>
-
-    <div class="convo">
-      <ul></ul>
+    <div class="react-chatbot-component-container">
+      <script>
+        var chatbotContainer = document.querySelector('.react-chatbot-component-container')
+        ReactDOM.render(
+          React.createElement(Chatbot),
+          chatbotContainer
+        )
+        </script>
     </div>
   </div>
-
 </div>
